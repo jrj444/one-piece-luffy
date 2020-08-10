@@ -1,0 +1,22 @@
+* {box-sizing: border-box;}
+
+*::before {box-sizing: border-box}
+
+*::after {box-sizing: border-box}
+
+.flag {
+  position: relative;
+  background: black;
+}
+
+.bone {
+  border: 1px solid #000;
+  width: 100px;
+  height: 10px;
+  position: relative;
+  left: 50%;
+  margin-left: -50px;
+  top: 100px;
+  transform: rotate(45deg);
+
+}
