@@ -1,4 +1,11 @@
-const string = `
+const string = `/* 这是一个通过JavaScript实现的
+  * 自动画出一面草帽海贼旗的项目
+  * 下面的代码将会展示出来，注意看屏幕的下半部分
+  * 此外在右边还有四个按钮可以点击
+  * 实现暂停、播放、常速和加速播放的功能
+  * 让我们开始吧
+  */
+  
   .flag {
   width: 100%;
   height: 100%;
@@ -7,6 +14,10 @@ const string = `
   z-index: 1;
 }
 
+/* 先画两根骨头在最下面
+ * 一根骨头可以用一个矩形和四个圆形来完成
+ */
+ 
 .bone-1, .bone-2 {
   position: absolute;
   width: 100px;
@@ -76,6 +87,10 @@ const string = `
   z-index: 3;
 }
 
+/* 接下来是帽子
+ * 一个简单的半圆形
+ */
+
 .hat {
   width: 8em;
   height: 4em;
@@ -89,6 +104,10 @@ const string = `
   border-bottom: none;
   z-index: 4;
 }
+
+/* 然后是草帽上面的红色边带
+ * 用了一个伪元素来做
+ */
 
 .hat::before {
   content: '';
@@ -105,6 +124,11 @@ const string = `
   border-top-right-radius: 25px 50px;
 }
 
+/* 接着就是帽檐了
+ * 用一个椭圆形
+ * 结合 z-index 放在帽子的上层
+ */
+
 .hat-brim {
   width: 12em;
   height: 2.2em;
@@ -117,6 +141,11 @@ const string = `
   background: #f7b600;
   z-index: 5;
 }
+
+/* 接下来同样是一个椭圆形的额头
+ * 以及一个半圆形的脸
+ * 通过 z-index 来结合两个图形
+ */
 
 .forehead {
   position: absolute;
@@ -144,6 +173,10 @@ const string = `
   border-top: none;
   z-index: 6;
 }
+
+/* 两个骷髅头的眼睛
+ * 和鼻子
+ */
 
 .eye {
   width: 2.4em;
@@ -178,6 +211,10 @@ const string = `
   top: 2.2em;
   z-index: 2;
 }
+
+/* 最后是最麻烦的下巴
+ * 以及牙齿的部分
+ */
 
 .chin {
   height: 100px;
@@ -225,6 +262,10 @@ const string = `
   border: 5px solid black;
   z-index: 1;
 }
+
+/* 同样是使用 z-index
+ * 利用 div 画出牙齿部分
+ */
 
 .lower-teeth {
   width: 100%;
@@ -281,6 +322,11 @@ const string = `
   top: 45%;
   z-index: 2;
 }
+
+/* 最后添加上鬼畜的动画
+ * 让嘴巴动起来
+ * 感谢观看 完
+ */
 
 @keyframes bite {
   0% {transform: translate3d(0, 0, 0);}
