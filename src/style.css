@@ -206,6 +206,16 @@
   z-index: 2;
 }
 
+.chin {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+}
+
 .jaws {
   position: absolute;
   width: 5em;
@@ -214,7 +224,7 @@
   border: 5px solid black;
   border-radius: 20em 20em 30em 30em;
   left: calc(50% - 2.5em);
-  top: 12.5em;
+  top: 5.5em;
   overflow: hidden;
 }
 
