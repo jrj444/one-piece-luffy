@@ -1,22 +1,304 @@
-* {box-sizing: border-box;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 *::before {box-sizing: border-box}
 
 *::after {box-sizing: border-box}
 
 .flag {
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
+  top: 50vh;
   position: relative;
-  background: black;
+  background: rgba(255, 0, 0, 0.25);
+  z-index: 1;
 }
 
-.bone {
-  border: 1px solid #000;
+.bone-1, .bone-2 {
+  position: absolute;
   width: 100px;
-  height: 10px;
-  position: relative;
+  height: 100px;
   left: 50%;
   margin-left: -50px;
-  top: 100px;
-  transform: rotate(45deg);
+  top: 50%;
+  margin-top: -50px;
+  z-index: 2;
+}
 
+.bone-1 > .rectangle {
+  background: #fff;
+  width: 16em;
+  height: 1.5em;
+  position: absolute;
+  left: 50%;
+  margin-left: -8em;
+  top: 50%;
+  transform: rotate(35deg);
+}
+
+.bone-2 > .rectangle {
+  background: #fff;
+  width: 16em;
+  height: 1.5em;
+  position: absolute;
+  left: 50%;
+  margin-left: -8em;
+  top: 50%;
+  transform: rotate(-35deg);
+}
+
+.circle-left-top {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background: #fff;
+  border-radius: 0.75em;
+  left: -0.8em;
+  top: -0.5em;
+}
+
+.circle-left-bottom {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background: #fff;
+  border-radius: 0.75em;
+  left: -0.8em;
+  bottom: -0.5em;
+}
+
+.circle-right-top {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background: #fff;
+  border-radius: 0.75em;
+  right: -0.8em;
+  top: -0.5em;
+}
+
+.circle-right-bottom {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background: #fff;
+  border-radius: 0.75em;
+  right: -0.8em;
+  bottom: -0.5em;
+}
+
+.head {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  margin-left: -75px;
+  top: 50%;
+  margin-top: -75px;
+  border-radius: 75px;
+  z-index: 3;
+}
+
+.hat {
+  width: 8em;
+  height: 4em;
+  position: absolute;
+  left: 50%;
+  margin-left: -4em;
+  top: 25px;
+  border-radius: 4em 4em 0 0;
+  background: #f7b600;
+  border: 5px solid black;
+  border-bottom: none;
+  z-index: 4;
+}
+
+.hat::before {
+  content: '';
+  width: 8em;
+  height: 2.4em;
+  position: absolute;
+  left: 50%;
+  margin-left: -4em;
+  border: 5px solid black;
+  border-bottom: none;
+  background: red;
+  bottom: 0;
+  border-top-left-radius: 25px 50px;
+  border-top-right-radius: 25px 50px;
+}
+
+.hat-brim {
+  width: 12em;
+  height: 2.2em;
+  position: absolute;
+  border: 5px solid #000;
+  left: 50%;
+  margin-left: -6em;
+  top: 3.8em;
+  border-radius: 50%;
+  background: #f7b600;
+  z-index: 5;
+}
+
+.forehead {
+  position: absolute;
+  width: 8em;
+  height: 2em;
+  left: 50%;
+  margin-left: -4em;
+  background: white;
+  top: 4.4em;
+  border-radius: 100%;
+  border: 5px inset black;
+  z-index: 6;
+}
+
+.face {
+  width: 8em;
+  height: 4em;
+  position: absolute;
+  left: 50%;
+  margin-left: -4em;
+  bottom: 0;
+  border-radius: 0 0 4em 4em;
+  background: #fff;
+  border: 5px solid #000;
+  border-top: none;
+  z-index: 6;
+}
+
+.eye {
+  width: 2.4em;
+  height: 2.4em;
+  background: #000;
+  border-radius: 50%;
+  border: 5px solid #000;
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  margin-left: -1.2em;
+  z-index: 2;
+}
+
+.eye.left {
+  transform: translateX(-1.5em);
+}
+
+.eye.right {
+  transform: translateX(1.5em);
+}
+
+.nose {
+  width: 1em;
+  height: 1em;
+  background: #000;
+  border-radius: 50%;
+  border: 5px solid #000;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.5em;
+  top: 2.2em;
+  z-index: 2;
+}
+
+.jaws {
+  position: absolute;
+  width: 5em;
+  height: 6em;
+  background: white;
+  border: 5px solid black;
+  border-radius: 20em 20em 30em 30em;
+  left: calc(50% - 2.5em);
+  top: 12.5em;
+  overflow: hidden;
+}
+
+.lower-jaw {
+  width: 10em;
+  position: absolute;
+  left: calc(50% - 5em);
+  top: -2.8em;
+  background: black;
+  border: 5px solid black;
+  border-bottom: none;
+  height: 125%;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.2s 0s linear;
+}
+
+.black {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -1.1em;
+  border-radius: 50%;
+  background: black;
+  border: 5px solid black;
+  z-index: 1;
+}
+
+.lower-teeth {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid black;
+}
+
+.upper-teeth {
+  width: 200%;
+  height: 125%;
+  left: -50%;
+  position: absolute;
+  top: -70%;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid black;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.gum1 {
+  height: 10em;
+  width: 1em;
+  border-radius: 50%;
+  border-left: 5px solid black;
+  position: absolute;
+  left: 32%;
+  top: 45%;
+  z-index: 2;
+}
+
+.gum2 {
+  height: 10em;
+  width: 0;
+  border-radius: 50%;
+  border-left: 5px solid black;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  z-index: 2;
+}
+
+.gum3 {
+  height: 10em;
+  width: 1em;
+  border-radius: 50%;
+  border-right: 5px solid black;
+  position: absolute;
+  left: 52%;
+  top: 45%;
+  z-index: 2;
+}
+
+.lower-jaw:hover {
+  transform: translate3d(0, 1em, 0);
 }
